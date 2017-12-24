@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 
 const schema = mongoose.Schema({
-  name: String
+  name: String,
+  email: String
 })
 
-console.log(__filename.split(__dirname+"/").pop())
-
-module.exports = mongoose.model('userModel', schema)
+module.exports = mongoose.model('user', schema)

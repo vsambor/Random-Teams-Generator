@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h2>Posts</h2>
+    <h2>Teams</h2>
     <br>
     <h3>Server response: </h3> <br>
     <pre>{{response}}</pre>
@@ -18,8 +18,8 @@ export default {
     }
   },
   created () {
-    axios.get('http://localhost:8081/posts').then((response) => {
-      console.log(response)
+    axios.get('http://localhost:8081/api/users').then((response) => {
+      console.log(response.data)
       this.response = response.data
     })
   }

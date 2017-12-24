@@ -1,6 +1,10 @@
 const env = process.env.NODE_ENV || 'development'
-const packageJson = require("../package.json")
-const express = require("express")
+const packageJson = require('../package.json')
+const express = require('express')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const favicon = require('serve-favicon')
+const path = require('path')
 
 console.log(`Loading App in ${env} mode.`)
 
@@ -8,7 +12,7 @@ global.App = {
   env: env,
   app: express(),
   version: packageJson.version,
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 8081,
   config: require("./config")[env],
   root: __dirname + "/..",
   appPath: path => App.root + "/" + path,
@@ -32,8 +36,13 @@ if (!App.config) {
   process.exit(1)
 }
 
+// Midlewares
+App.app.use(favicon(path.join(__dirname, '../public/images', 'favicon.ico')))
+App.app.use(cors());
+App.app.use(bodyParser.json())
+
 // Bootstrap the routes.
 App.require("config/routes")(App.app)
 
-// Connects to database.
+// Connects to the database.
 App.require("config/database.js")(process.env.DATABASE_URL || App.config.db.url)

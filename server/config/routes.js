@@ -1,5 +1,12 @@
 module.exports = (app) => {
-  var homeController = App.controller('homeController')
+  
+
+  const homeController = App.controller('homeController')
   app.get('/', homeController.index)
-  app.get('/users', homeController.getAllUsers)
+
+  const userController = App.controller('userController')
+  app.get('/api/users', userController.findAll)
+  app.get('/api/user/:id', userController.findById)
+
+  app.use((req, res) => res.status(404).send({url: req.originalUrl + ' not found'}))
 }
