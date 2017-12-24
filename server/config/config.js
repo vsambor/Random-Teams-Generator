@@ -1,10 +1,10 @@
 var configBase = {
   root: require('path').normalize(__dirname + '/..'),
   app: {
-    name: "App"
+    name: "Random-Teams-Generator"
   },
   db: {
-    url: 'mongodb://localhost/App'
+    url: 'mongodb://localhost/rtg'
   }
 }
 

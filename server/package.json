@@ -1,5 +1,5 @@
 {
-  "name": "Random-Team-Generator",
+  "name": "Random-Teams-Generator",
   "version": "1.0.0",
   "description": "Server side random team generator application",
   "main": "server.js",
@@ -17,7 +17,6 @@
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "mongoose": "^4.13.7",
-    "path": "^0.12.7",
     "serve-favicon": "^2.4.5"
   }
 }
