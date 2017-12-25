@@ -47,3 +47,36 @@ It can be used in multiple scenarios:
 ## IDE
 
 - [Visual Studio Code](https://code.visualstudio.com/)
+ 
+> VSC Extensions:
+ [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+
+# Usage
+
+Make sure to have [node](https://nodejs.org/en/) installed.<br>
+Open a console for each `server` and `client` folders and run:
+
+```
+$ npm install
+```
+
+### Start Server
+
+To start serving server side files run the following command in `server` folder console:
+
+```
+$ npm start
+```
+
+The application is available by default on port `8081`
+
+### Start Client
+
+To start the client side run the following command in `client` folder console:
+
+```
+$ npm run dev
+```
+
+The application is available by default on port `8080`
+
