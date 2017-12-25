@@ -33,6 +33,7 @@ It can be used in multiple scenarios:
 - [buefy](https://buefy.github.io/#/) - [bulma](https://bulma.io/)
 - [webpack](https://webpack.js.org/)
 - [babel](https://babeljs.io/)
+- [sass](http://sass-lang.com/)
 - [postCSS](https://github.com/postcss/postcss)
 - [esllint](https://eslint.org/)
 - [karma](https://karma-runner.github.io/2.0/index.html)
