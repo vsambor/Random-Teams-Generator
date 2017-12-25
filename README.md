@@ -30,7 +30,7 @@ It can be used in multiple scenarios:
 ## Frontend
 
 - [vue.js](https://vuejs.org/)
-- [bulma](https://bulma.io/)
+- [buefy](https://buefy.github.io/#/) - [bulma](https://bulma.io/)
 - [webpack](https://webpack.js.org/)
 - [babel](https://babeljs.io/)
 - [postCSS](https://github.com/postcss/postcss)
