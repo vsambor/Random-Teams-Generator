@@ -8,7 +8,7 @@
     <div class="m30 m has-text-centered">
       <a class="button is-small" @click="onGetMembers">Get Members</a>
     </div>
-    
+
   </div>
 </template>
 
@@ -16,15 +16,15 @@
 import axios from 'axios'
 
 export default {
-  data () {
+  data() {
     return {
       msg: 'Welcome to Your Vue.js App',
       response: ''
     }
   },
   methods: {
-    onGetMembers () {
-      axios.get('http://localhost:8081/api/members').then((response) => {
+    onGetMembers() {
+      axios.get('http://localhost:8081/api/members').then(response => {
         console.log(response.data)
         this.response = response.data
       })
