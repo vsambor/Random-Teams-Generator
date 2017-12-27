@@ -10,7 +10,7 @@
 export default {}
 </script>
 
-<style>
+<style >
   .footer {
     background-color: #363636
   }

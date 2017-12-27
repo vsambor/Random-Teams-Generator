@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <navbar/>
-      <div class="container is-fluid">
-        <router-view/>
-      </div>
+    <div class="container is-fluid">
+      <router-view/>
+    </div>
     <footerbar/>
   </div>
 </template>
@@ -21,6 +21,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+// Import Bulma's core
+@import '~bulma/sass/utilities/_all';
 
+// Import Bulma and Buefy styles
+@import '~bulma';
+@import '~buefy/src/scss/buefy';
 </style>
