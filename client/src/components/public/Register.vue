@@ -7,24 +7,31 @@
           <p class="subtitle has-text-grey">Please enter your information.</p>
           <div class="box">
             <form>
+
+              <!-- Email -->
               <div class="field">
                 <div class="control">
-                  <input class="input" type="email" placeholder="Your Email">
+                  <input class="input" type="email" placeholder="Your Email" v-model="user.email">
                 </div>
               </div>
 
+              <!-- Password -->
               <div class="field">
                 <div class="control">
-                  <input class="input" type="password" placeholder="Your Password">
+                  <input class="input" type="password" placeholder="Your Password" v-model="user.password">
                 </div>
               </div>
 
+              <!-- Password Confirmation -->
               <div class="field">
                 <div class="control">
                   <input class="input" type="password" placeholder="Confirm password">
                 </div>
               </div>
-              <a class="button is-block is-info">Register</a>
+
+              <!-- Register Button -->
+              <a class="button is-block is-info" @click="onRegister">Register</a>
+
             </form>
           </div>
         </div>
@@ -34,14 +41,24 @@
 </template>
 
 <script>
-// import axios from "axios";
+import UserService from 'services/UserService'
 
 export default {
   data() {
-    return {}
+    return {
+      user: {
+        email: '',
+        password: ''
+      }
+    }
   },
   methods: {
-    onLogin() {}
+    onRegister() {
+      UserService.register(this.user).then(response => {
+        console.log(response.data)
+        this.response = response.data
+      })
+    }
   }
 }
 </script>

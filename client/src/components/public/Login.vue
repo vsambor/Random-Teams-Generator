@@ -30,7 +30,7 @@
             </form>
           </div>
           <p class="">
-            <a href="../">Sign Up</a> 
+            <router-link to="Register">Sign Up</router-link> <span class="has-text-black"> &nbsp;·&nbsp; </span>
             <a href="../">Forgot Password</a> 
           </p>
         </div>
