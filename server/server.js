@@ -1,4 +1,3 @@
-require("./config/application");
+const appConfig = require('./config/application')
 
-App.start();
-
+appConfig.start()
