@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div>
     <h2>Welcom to Random Teams Generator! Please register to begin...</h2>
   </div>
 </template>
