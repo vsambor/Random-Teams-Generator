@@ -17,6 +17,4 @@ const schema = mongoose.Schema({
   rating: { type: Number, min: 0, max: 10 }
 }, { timestamps: {} })
 
-
-
 module.exports = mongoose.model('member', schema)

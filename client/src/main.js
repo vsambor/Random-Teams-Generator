@@ -5,10 +5,10 @@ import Vuex from 'vuex'
 import App from './App'
 import store from './store'
 import router from './router'
-import Buefy from 'buefy'
-import 'buefy/lib/buefy.css'
+import Element from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
-Vue.use(Buefy)
+Vue.use(Element)
 Vue.use(Vuex)
 
 Vue.config.productionTip = false

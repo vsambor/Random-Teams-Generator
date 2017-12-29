@@ -18,6 +18,8 @@
       <!-- The buttons on the left side -->
       <div class="navbar-start">
         <router-link class="navbar-item" to="/">Home</router-link>
+        <router-link class="navbar-item" to="Members" v-if="$store.isLoggedIn">Members</router-link>
+        <router-link class="navbar-item" to="Teams" v-if="$store.isLoggedIn">Teams</router-link>
       </div>
 
       <!-- The buttons on the right side -->
@@ -27,12 +29,16 @@
 
             <!-- Login button -->
             <p class="control">
-              <router-link class="button is-small" to="Login">Login</router-link>
+              <router-link to="Login">
+                <el-button size="mini">Login</el-button>
+              </router-link>
             </p>
 
             <!-- Register button -->
             <p class="control">
-              <router-link class="button is-small is-info" to="Register">Register</router-link>
+              <router-link to="Register">
+                <el-button size="mini" type="primary">Register</el-button>
+              </router-link>
             </p>
           </div>
         </div>
@@ -46,7 +52,8 @@
 export default {
   data() {
     return {
-      isSmallDevice: false
+      isSmallDevice: false,
+      isLoggedIn: this.$store.isLoggedIn
     }
   }
 }

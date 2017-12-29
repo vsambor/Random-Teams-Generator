@@ -1,8 +1,8 @@
-const userModel = App.model('userModel')
-const bcrypt = require('bcryptjs');
+const UserModel = require('./model')
+const bcrypt = require('bcryptjs')
 
 exports.add = (req, res) => {
-  let newUser = new userModel({
+  let newUser = new UserModel({
     email: req.body.email,
     password: bcrypt.hashSync(req.body.password),
     firstName: req.body.firstName,
@@ -16,24 +16,30 @@ exports.add = (req, res) => {
     })
     .catch((err) => {
       console.error('Error saving: ' + err)
-      res.end('Error: ' + err);
+      res.end('Error: ' + err)
     })
 }
 
 exports.findAll = (req, res) => {
-  userModel.find({})
+  UserModel.find({})
     .then(result => res.status(200).send(result))
     .catch(err => console.error('There was an error' + err))
 }
 
 exports.findById = (req, res) => {
-  userModel.findById(req.params.id)
+  UserModel.findById(req.params.id)
     .then(result => res.status(200).send(result))
     .catch(err => console.error('There was an error' + err))
 }
 
-exports.findByName = (req, res) => {
-  userModel.findOne({ name: req.params.name })
-    .then(result => res.status(200).send(result))
+exports.update = (req, res) => {
+  UserModel.findOneAndUpdate(req.params.id, req.body, { upsert: true, new: true })
+    .then(result => res.status(202).send(result))
+    .catch(err => console.error('There was an error' + err))
+}
+
+exports.delete = (req, res) => {
+  UserModel.findByIdAndRemove(req.params.id)
+    .then(result => res.status(204).send({ message: 'removed' }))
     .catch(err => console.error('There was an error' + err))
 }

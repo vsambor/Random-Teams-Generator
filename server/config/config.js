@@ -1,18 +1,20 @@
+const path = require('path')
+
 var configBase = {
-  root: require('path').normalize(__dirname + '/..'),
+  root: path.normalize(path.join(__dirname, '..')),
   app: {
-    name: "Random-Teams-Generator"
+    name: 'Random-Teams-Generator'
   },
   db: {
     url: 'mongodb://localhost/rtg'
   }
 }
 
-var test = JSON.parse(JSON.stringify(configBase));
-//test.db = // test environment db connection information
+var test = JSON.parse(JSON.stringify(configBase))
+// test.db = // test environment db connection information
 
-var production = JSON.parse(JSON.stringify(configBase));
-//production.db = // production environment db connection information
+var production = JSON.parse(JSON.stringify(configBase))
+// production.db = // production environment db connection information
 
 module.exports = {
   development: configBase,

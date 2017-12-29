@@ -13,6 +13,6 @@ const schema = mongoose.Schema({
   firstName: { type: String },
   lastName: { type: String },
   isActive: { type: Boolean, default: true }
-}, { timestamps: {} })
+}, { timestamps: {} }) // The timestamps adds 2 fields; createdAt and updatedAt in the database.
 
 module.exports = mongoose.model('user', schema)

@@ -1,0 +1,9 @@
+const service = require('./service')
+
+module.exports = (app) => {
+  app.post('/api/team', service.add)
+  app.get('/api/teams', service.findAll)
+  app.get('/api/team/:id', service.findById)
+  app.put('/api/team/:id', service.update)
+  app.delete('/api/team/:id', service.delete)
+}
