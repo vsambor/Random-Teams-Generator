@@ -7,32 +7,24 @@ export default new Vuex.Store({
   modules: {},
   state: {
     isLoggedIn: false,
-    user: {},
-    currentLanguage: 'en',
-    isAppInitialized: false
+    currentUser: {},
+    currentLanguage: 'en'
   },
   mutations: {
-    login(state, authentication) { },
+    setCurrentUser(state, value) {
+      state.currentUser = value
+    },
+    setCurrentLanguage(state, value) {
+      state.currentLanguage = value
+    },
     logout(state) {
       state.isLoggedIn = false
-      state.user = {}
-    },
-    setAppInitialized(state) {
-      state.isAppInitialized = true
-    },
-
-    setCurrentLanguage(state, data) {
-
-    },
-    initCurrentLanguage(state, lang) {
-      state.currentLanguage = lang
+      state.currentUser = {}
     }
   },
   getters: {
-    isUserLoggedIn: state => {
-      return state.user.authentication && state.user.authentication.authenticated
-    },
-
-    getCurrentLanguage: state => () => state.currentLanguage
+    currentUser: state => state.currentUser,
+    isLoggedIn: state => state.isLoggedIn,
+    currentLanguage: state => state.currentLanguage
   }
 })
