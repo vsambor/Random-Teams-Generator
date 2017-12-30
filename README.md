@@ -47,9 +47,47 @@ It can be used in multiple scenarios:
 ## IDE
 
 - [Visual Studio Code](https://code.visualstudio.com/)
+
+> User settings:
+
+```
+{
+  "editor.mouseWheelZoom": true,
+  "editor.tabSize": 2,
+  "editor.renderIndentGuides": true,
+  "editor.rulers": [
+    160
+  ],
+  "window.zoomLevel": 0,
+  "editor.wordWrapColumn": 160,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    "vue"
+  ],
+  "vetur.format.defaultFormatter.html": "prettier",
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "html.format.wrapLineLength": 160,
+  "html.format.preserveNewLines": false,
+  "workbench.iconTheme": "vscode-icons",
+  "extensions.autoUpdate": true
+}
+```
  
-> VSC Extensions:
- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+> Extensions:
+
+ ```
+PeterJausovec.vscode-docker
+dbaeumer.vscode-eslint
+octref.vetur
+robertohuertasm.vscode-icons
+```
 
 # Usage
 
