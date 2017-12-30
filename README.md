@@ -30,7 +30,7 @@ It can be used in multiple scenarios:
 ## Frontend
 
 - [vue.js](https://vuejs.org/)
-- [bulma](https://bulma.io/) - [element](http://element.eleme.io/#/en-US)
+- [bulma](https://bulma.io/) - [element ui](http://element.eleme.io/#/en-US)
 - [webpack](https://webpack.js.org/)
 - [babel](https://babeljs.io/)
 - [sass](http://sass-lang.com/)
@@ -54,7 +54,7 @@ It can be used in multiple scenarios:
 # Usage
 
 Make sure to have [node](https://nodejs.org/en/) installed.<br>
-Open a console for each `server` and `client` folders and run:
+Open a console in project root folders and run:
 
 ```
 $ npm install
@@ -62,10 +62,10 @@ $ npm install
 
 ### Start Server
 
-To start serving server side files run the following command in `server` folder console:
+To start serving server side files run the following command:
 
 ```
-$ npm start
+$ npm run server-dev
 ```
 
 The application is available by default on port `8081`
@@ -75,8 +75,34 @@ The application is available by default on port `8081`
 To start the client side run the following command in `client` folder console:
 
 ```
-$ npm run dev
+$ npm run client-dev
 ```
 
 The application is available by default on port `8080`
+
+### Test Server
+
+To launch the server unit test run the following command:
+
+```
+$ npm run server-unit-test
+```
+
+### Test Client
+
+Client has two type of tests comming with vue cli generator; unit test and end to end test:
+
+**Unit Test**
+
+```
+$ npm run client-unit-test
+```
+
+**E2E Test**
+
+```
+$ npm run client-e2e-test
+```
+
+
 
