@@ -4,27 +4,31 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  modules: {},
+  // When there are multiple store modules.
+  // modules: {},
   state: {
-    isLoggedIn: false,
-    currentUser: {},
+    isLogged: false,
+    currentUser: null,
     currentLanguage: 'en'
   },
   mutations: {
     setCurrentUser(state, value) {
       state.currentUser = value
+      state.isLogged = true
     },
     setCurrentLanguage(state, value) {
       state.currentLanguage = value
     },
     logout(state) {
-      state.isLoggedIn = false
-      state.currentUser = {}
+      state.isLogged = false
+      state.currentUser = null
     }
   },
   getters: {
+    isLogged: state => state.isLogged,
     currentUser: state => state.currentUser,
-    isLoggedIn: state => state.isLoggedIn,
     currentLanguage: state => state.currentLanguage
   }
+  // To do things async
+  // actions: { }
 })

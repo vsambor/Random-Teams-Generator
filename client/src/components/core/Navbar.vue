@@ -18,8 +18,8 @@
       <!-- The buttons on the left side -->
       <div class="navbar-start">
         <router-link class="navbar-item" to="/">Home</router-link>
-        <router-link class="navbar-item" to="Members" v-if="$store.getters.isLoggedIn">Members</router-link>
-        <router-link class="navbar-item" to="Teams" v-if="$store.getters.isLoggedIn">Teams</router-link>
+        <router-link class="navbar-item" to="members" v-if="$store.getters.isLogged">Members</router-link>
+        <router-link class="navbar-item" to="teams" v-if="$store.getters.isLogged">Teams</router-link>
       </div>
 
       <!-- The buttons on the right side -->
@@ -57,7 +57,7 @@ export default {
   },
   mounted() {
     // To simulate the login.
-    // this.$store.commit('setCurrentUser', { name: 'tziuka' })
+    this.$store.commit('setCurrentUser', { name: 'tziuka' })
     // this.$store.commit('logout')
   }
 }
