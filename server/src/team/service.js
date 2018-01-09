@@ -52,9 +52,9 @@ exports.addMember = (req, res) => {
     .then(result => {
       TeamModel.findByIdAndUpdate(req.params.teamId, { $push: { members: result } }, { safe: true, upsert: true })
         .then(() => res.json(201, result))
-        .catch(err => console.error('There was an error' + err))
+        .catch(err => res.status(500).send('Member error: ' + err))
     })
-    .catch(err => console.error('There was an error' + err))
+    .catch(err => res.status(500).send('Team error: ' + err))
 }
 
 exports.deleteMember = (req, res) => {
