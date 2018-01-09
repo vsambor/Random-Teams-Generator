@@ -89,6 +89,31 @@ octref.vetur
 robertohuertasm.vscode-icons
 ```
 
+# API - routes
+
+**USER** <br>
+  [http://localhost:8081/api/user](http://localhost:8081/api/user) : `POST` — Add user <br>
+  [http://localhost:8081/api/users](http://localhost:8081/api/users) : `GET` — Get all users <br>
+  [http://localhost:8081/api/user/:id](http://localhost:8081/api/user/:id) : `GET` — Get user by id <br>
+  [http://localhost:8081/api/user/:id](http://localhost:8081/api/user/:id) : `PUT` — Update user by id <br>
+  [http://localhost:8081/api/user/:id](http://localhost:8081/api/user/:id) : `DELETE` — Delete user by id <br>
+  
+**MEMBER** <br>
+  [http://localhost:8081/api/member](http://localhost:8081/api/member) : `POST` — Add member <br>
+  [http://localhost:8081/api/members](http://localhost:8081/api/members) : `GET` — Get all members <br>
+  [http://localhost:8081/api/member/:id](http://localhost:8081/api/member/:id) : `GET` — Get member by id <br>
+  [http://localhost:8081/api/member/:id](http://localhost:8081/api/member/:id) : `PUT` — Update member by id <br>
+  [http://localhost:8081/api/member/:id](http://localhost:8081/api/member/:id) : `DELETE` — Delete member by id <br>
+  
+  **TEAM** <br>
+  [http://localhost:8081/api/team](http://localhost:8081/api/team) : `POST` — Add team <br>
+  [http://localhost:8081/api/teams](http://localhost:8081/api/teams) : `GET` — Get all teams <br>
+  [http://localhost:8081/api/team/:id](http://localhost:8081/api/team/:id) : `GET` — Get team by id <br>
+  [http://localhost:8081/api/team/:id](http://localhost:8081/api/team/:id) : `PUT` — Update team by id <br>
+  [http://localhost:8081/api/team/:id](http://localhost:8081/api/team/:id) : `DELETE` — Delete team by id <br>
+  [http://localhost:8081/api/team/:teamId/member/:memberId](http://localhost:8081/api/team/:teamId/member/:memberId) : `POST` — Add member to the team <br>
+  [http://localhost:8081/api/team/:teamId/member/:memberId](http://localhost:8081/api/team/:teamId/member/:memberId) : `DELETE` — Delete member from the team <br>
+
 # Usage
 
 Make sure to have [node](https://nodejs.org/en/) installed.<br>
