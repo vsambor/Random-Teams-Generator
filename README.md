@@ -89,6 +89,31 @@ octref.vetur
 robertohuertasm.vscode-icons
 ```
 
+# API - routes
+
+**USER** <br>
+  `/api/user` : `[POST]` — Add user <br>
+  `/api/users` : `[GET]` — Get all users <br>
+  `/api/user/:id` : `[GET]` — Get user by id <br>
+  `/api/user/:id` : `[PUT]` — Update user by id <br>
+  `/api/user/:id` : `[DELETE]` — Delete user by id <br>
+  
+**MEMBER** <br>
+  `/api/member` : `[POST]` — Add member <br>
+  `/api/members` : `[GET]` — Get all members <br>
+  `/api/member/:id` : `[GET]` — Get member by id <br>
+  `/api/member/:id` : `[PUT]` — Update member by id <br>
+  `/api/member/:id` : `[DELETE]` — Delete member by id <br>
+  
+  **TEAM** <br>
+  `/api/team` : `[POST]` — Add team <br>
+  `/api/teams` : `[GET]` — Get all teams <br>
+  `/api/team/:id` : `[GET]` — Get team by id <br>
+  `/api/team/:id` : `[PUT]` — Update team by id <br>
+  `/api/team/:id` : `[DELETE]` — Delete team by id <br>
+  `/api/team/:teamId/member/:memberId` : `[POST]` — Add member to the team <br>
+  `/api/team/:teamId/member/:memberId` : `[DELETE]` — Delete member from the team <br>
+
 # Usage
 
 Make sure to have [node](https://nodejs.org/en/) installed.<br>
