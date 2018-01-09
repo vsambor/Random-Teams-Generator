@@ -3,6 +3,7 @@ const port = process.env.PORT || 8081
 const packageJson = require('../../package.json')
 const path = require('path')
 const cors = require('cors')
+const morgan = require('morgan')
 const helmet = require('helmet')
 const express = require('express')
 const compress = require('compression')
@@ -20,6 +21,7 @@ if (!config) {
 }
 
 // Midlewares
+app.use(morgan('dev'))
 app.use(cors())
 app.use(helmet())
 app.use(compress())
