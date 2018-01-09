@@ -1,4 +1,5 @@
 const TeamModel = require('./model')
+const MemberModel = require('../member/model')
 
 exports.add = (req, res) => {
   let newTeam = new TeamModel({
@@ -42,6 +43,13 @@ exports.update = (req, res) => {
 
 exports.delete = (req, res) => {
   TeamModel.findByIdAndRemove(req.params.id)
-    .then(result => res.status(204).send({ message: 'removed' }))
+    .then(result => res.send({ message: 'removed' }))
+    .catch(err => console.error('There was an error' + err))
+}
+
+exports.addMember = (req, res) => {
+  let memberModel = new MemberModel(req.body)
+  TeamModel.findByIdAndUpdate(req.params.id, { $push: { members: memberModel } }, { safe: true, upsert: true })
+    .then(() => { res.json(201, memberModel) })
     .catch(err => console.error('There was an error' + err))
 }

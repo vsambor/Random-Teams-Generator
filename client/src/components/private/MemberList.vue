@@ -3,6 +3,11 @@
     <h2>Members</h2>
     <br>
     <h3>Server response: </h3> <br>
+
+    <div v-for="res in response" :key="res">
+      {{res.name}}
+    </div>
+
     <pre>{{response}}</pre>
 
     <div class="m30 m has-text-centered">

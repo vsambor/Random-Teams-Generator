@@ -57,8 +57,8 @@ export default {
   },
   mounted() {
     // To simulate the login.
-    this.$store.commit('setCurrentUser', { name: 'tziuka' })
-    // this.$store.commit('logout')
+    // this.$store.commit('setCurrentUser', { name: 'tziuka' })
+    this.$store.commit('logout')
   }
 }
 </script>

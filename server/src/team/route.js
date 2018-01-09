@@ -6,4 +6,7 @@ module.exports = (app) => {
   app.get('/api/team/:id', service.findById)
   app.put('/api/team/:id', service.update)
   app.delete('/api/team/:id', service.delete)
+
+  // Team members routes.
+  app.post('/api/team/:id/member', service.addMember)
 }

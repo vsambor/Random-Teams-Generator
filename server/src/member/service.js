@@ -2,15 +2,14 @@ const MemberModel = require('./model')
 
 exports.add = (req, res) => {
   let newMember = new MemberModel({
+    teamId: req.body.teamId,
     name: req.body.name,
     email: req.body.email,
     rating: req.body.rating
   })
 
   newMember.save(newMember)
-    .then(() => {
-      res.json(201, newMember)
-    })
+    .then(() => res.json(201, newMember))
     .catch((err) => {
       console.error('Error saving: ' + err)
       res.end('Error: ' + err)

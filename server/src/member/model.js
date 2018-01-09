@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const schema = mongoose.Schema({
+  teamId: { type: String },
   name: {
     type: String,
     required: 'Name is required',

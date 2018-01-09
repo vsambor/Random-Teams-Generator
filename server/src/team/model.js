@@ -1,12 +1,13 @@
 const mongoose = require('mongoose')
 
-const schema = mongoose.Schema({
+const schema = new mongoose.Schema({
   name: {
     type: String,
     required: 'Name is required',
     unique: true
   },
-  result: { type: String }
+  result: { type: String },
+  members: { type: Array }
 }, { timestamps: {} })
 
 module.exports = mongoose.model('team', schema)
