@@ -39,3 +39,5 @@ exports.delete = (req, res) => {
     .then(result => res.status(204).send({ message: 'removed' }))
     .catch(err => console.error('There was an error' + err))
 }
+
+exports.getById = (id) => MemberModel.findById(id)

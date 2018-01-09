@@ -48,8 +48,17 @@ exports.delete = (req, res) => {
 }
 
 exports.addMember = (req, res) => {
-  let memberModel = new MemberModel(req.body)
-  TeamModel.findByIdAndUpdate(req.params.id, { $push: { members: memberModel } }, { safe: true, upsert: true })
-    .then(() => { res.json(201, memberModel) })
+  MemberModel.findById(req.params.memberId)
+    .then(result => {
+      TeamModel.findByIdAndUpdate(req.params.teamId, { $push: { members: result } }, { safe: true, upsert: true })
+        .then(() => res.json(201, result))
+        .catch(err => console.error('There was an error' + err))
+    })
+    .catch(err => console.error('There was an error' + err))
+}
+
+exports.deleteMember = (req, res) => {
+  TeamModel.update(req.params.teamId, { $pull: { members: { _id: req.params.teamId } } })
+    .then(result => res.send({ message: 'removed' }))
     .catch(err => console.error('There was an error' + err))
 }

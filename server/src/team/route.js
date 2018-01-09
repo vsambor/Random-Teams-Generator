@@ -8,5 +8,6 @@ module.exports = (app) => {
   app.delete('/api/team/:id', service.delete)
 
   // Team members routes.
-  app.post('/api/team/:id/member', service.addMember)
+  app.post('/api/team/:teamId/member/:memberId', service.addMember)
+  app.delete('/api/team/:teamId/member/:memberId', service.deleteMember)
 }
