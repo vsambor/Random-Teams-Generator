@@ -2,6 +2,8 @@
 # Random Teams Generator
 Random Teams Generator(RTG) is an appllication which generates teams randomly.
 
+[![Known Vulnerabilities](https://snyk.io/test/github/vsambor/random-teams-generator/badge.svg?targetFile=package.json)](https://snyk.io/test/github/vsambor/random-teams-generator?targetFile=package.json)
+
 It can be used in multiple scenarios:
 1. Games
 2. Projects
