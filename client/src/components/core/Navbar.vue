@@ -1,64 +1,49 @@
 <template>
-  <nav id="navbar" class="navbar is-dark">
-    <div class="navbar-brand">
+  <div>
+    <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
 
-      <!-- The brand name -->
-      <router-link class="navbar-item" to="/">Random Teams Generator</router-link>
+      <router-link to="/">
+        <el-menu-item index="0">
+          <strong>Random Teams Generator</strong>
+        </el-menu-item>
+      </router-link>
 
-      <!-- Little menu which appears once the application is running on a smaller device -->
-      <div class="navbar-burger burger" data-target="navbar-rtg" @click="isSmallDevice=!isSmallDevice" :class="{ 'is-active' : isSmallDevice }">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
+      <router-link to="/">
+        <el-menu-item index="1">Home</el-menu-item>
+      </router-link>
 
-    <div id="avbar-rtg" class="navbar-menu" :class="{ 'is-active' : isSmallDevice }">
+      <router-link to="teams" v-if="$store.getters.isLogged">
+        <el-menu-item index="2">Teams</el-menu-item>
+      </router-link>
 
-      <!-- The buttons on the left side -->
-      <div class="navbar-start">
-        <router-link class="navbar-item" to="/">Home</router-link>
-        <router-link class="navbar-item" to="members" v-if="$store.getters.isLogged">Members</router-link>
-        <router-link class="navbar-item" to="teams" v-if="$store.getters.isLogged">Teams</router-link>
-      </div>
+      <router-link to="members" v-if="$store.getters.isLogged">
+        <el-menu-item index="3">Members</el-menu-item>
+      </router-link>
 
-      <!-- The buttons on the right side -->
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="field is-grouped">
-
-            <!-- Login button -->
-            <p class="control">
-              <router-link to="Login">
-                <a class="button is-small">Login</a>
-              </router-link>
-            </p>
-
-            <!-- Register button -->
-            <p class="control">
-              <router-link to="Register">
-                <a class="button is-small is-info">Register</a>
-              </router-link>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-
+    </el-menu>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      isSmallDevice: false
+      activeIndex: '1'
     }
   },
   mounted() {
     // To simulate the login.
     this.$store.commit('setCurrentUser', { name: 'tziuka' })
     // this.$store.commit('logout')
+  },
+  methods: {
+    handleSelect(key, keyPath) {
+      // Not working for some reason, I will recheck.
+      if (key === '0') {
+        this.activeIndex = '1'
+        console.log(this.activeIndex)
+      }
+    }
   }
 }
 </script>

@@ -1,11 +1,19 @@
 <template>
-  <div id="app">
-    <navbar/>
-    <div class="container is-fluid">
+  <el-container id="app">
+
+    <el-header>
+      <navbar/>
+    </el-header>
+
+    <el-main>
       <router-view/>
-    </div>
-    <footerbar/>
-  </div>
+    </el-main>
+
+    <el-footer>
+      <footerbar/>
+    </el-footer>
+
+  </el-container>
 </template>
 
 <script>
@@ -22,13 +30,15 @@ export default {
 </script>
 
 <style lang="scss">
-// Import Bulma's core
-@import '~bulma/sass/utilities/_all';
+body {
+  margin: 0px;
+}
 
-// Import Bulma and Buefy styles
-@import '~bulma';
+.el-header {
+  padding: 0px;
+}
 
-body:not(.modal-open){
-  padding-right: 0px !important;
+.el-footer {
+  padding: 0px;
 }
 </style>

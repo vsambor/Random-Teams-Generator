@@ -11,7 +11,7 @@
     <pre>{{response}}</pre>
 
     <div class="m30 m has-text-centered">
-      <a class="button is-small" @click="onGetMembers">Get Members</a>
+      <el-button type="primary" @click="onGetMembers">Get Members</el-button>
     </div>
 
   </div>

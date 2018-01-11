@@ -1,8 +1,8 @@
 <template>
   <footer class="footer">
-      <div class="content has-text-centered">
-        <p>2018 © Random Teams Generator. All rights reserved.</p>
-      </div>
+    <el-row>
+      <p>2018 © Random Teams Generator. All rights reserved.</p>
+    </el-row>
   </footer>
 </template>
 
@@ -11,12 +11,12 @@ export default {}
 </script>
 
 <style >
-  .footer {
-    background-color: #363636
-  }
+.footer {
+  background-color: rgb(84, 92, 100);
+  text-align: center;
+}
 
-  p {
-    color: white;
-  }
-
+p {
+  color: white;
+}
 </style>
