@@ -15,7 +15,7 @@
     "client-build": "node client/build/build.js"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "compression": "^1.7.1",
@@ -23,7 +23,7 @@
     "element-ui": "^2.0.9",
     "express": "^4.16.2",
     "helmet": "^3.9.0",
-    "mongoose": "^4.13.7",
+    "mongoose": "^5.3.9",
     "morgan": "^1.9.0",
     "nodemailer": "^4.4.1",
     "passport": "^0.4.0",
